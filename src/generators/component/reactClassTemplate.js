@@ -8,7 +8,7 @@ export const reactClassTemplate = (componentName, includeStyles) => {
   const componentTemplate = `export default class ${componentName} extends React.Component {
   render() {
     return (
-
+        <div>This is an auto generated component</div>
     );
   }
 }`;
