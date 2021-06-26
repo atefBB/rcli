@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run clean && babel -d lib src --ignore base -D && cp -R src/blueprints/base lib/blueprints/base && cp src/blueprints/linters/eslint/.eslintrc lib/blueprints/linters/eslint/.eslintrc",
     "clean": "rimraf lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -46,9 +47,6 @@
     "rimraf": "^2.5.2"
   },
   "babel": {
-    "presets": [
-      "es2015",
-      "stage-1"
-    ]
+    "presets": ["es2015", "stage-1"]
   }
 }
