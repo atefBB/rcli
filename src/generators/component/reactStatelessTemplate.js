@@ -5,16 +5,14 @@ export const reactStatelessTemplate = (componentName, includeStyles) => {
     imports.push(`import styles from './${componentName}.css';`);
   }
 
-  const componentTemplate = `const ${componentName} = () => (
-
-);`;
+  const componentTemplate = `export default ${componentName}() {
+        return <div>This is a auto generated component!</div>
+  }`;
 
   const template = [
     ...imports,
     '',
     componentTemplate,
-    '',
-    `export default ${componentName};`,
   ];
 
   return template.join('\n');
